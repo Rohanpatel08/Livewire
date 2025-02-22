@@ -8,6 +8,7 @@ class Counter extends Component
 {
 
     public $count = 0;
+    public $title = 'Counter';
 
     public function increment()
     {
@@ -24,6 +25,8 @@ class Counter extends Component
     }
     public function render()
     {
-        return view('livewire.counter');
+
+        return view('livewire.counter')
+            ->layout('components.layouts.app', ['title' => $this->title]);
     }
 }
